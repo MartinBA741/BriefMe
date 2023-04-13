@@ -1,0 +1,27 @@
+additional_properties: {}
+apiVersion: '2022-09-01'
+name: gpucontainergroup
+location: westeurope
+properties:
+  containers:
+  - name: summerizergpucontainer
+    properties:
+      image: martinba741/academy:summerizerapp
+      ports:
+      - port: 80
+        protocol: TCP
+      resources:
+        requests:
+          cpu: 1.0
+          memoryInGB: 1.5
+          gpu:
+            count: 1
+            sku: K80
+  osType: Linux
+  restartPolicy: OnFailure
+  ipAddress: # IP address configuration of container group
+    ports:
+    - port: 80
+      protocol: TCP
+    type: Public
+    dnsNameLabel: sum-demo
