@@ -18,7 +18,7 @@ COPY . .
 WORKDIR .
 
 # Make port 80 available to the world outside this container
-EXPOSE 80
+EXPOSE 8080
 
 # Run the Streamlit app when the container launches
-CMD ["streamlit", "run", "--server.port", "80", "app.py"]
+CMD ["streamlit", "run", "app.py"]
