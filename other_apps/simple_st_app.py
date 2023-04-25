@@ -4,9 +4,9 @@ import streamlit as st
 # Initialize the summarization pipeline
 summarizer = pipeline("summarization", model="facebook/bart-large-cnn",
                       framework='pt', device=-1)  # 0 for gpu and -1 for cpu
+
+
 # Define the Streamlit app
-
-
 def app():
     # Add a title to the app
     st.title("Summarizer App")
